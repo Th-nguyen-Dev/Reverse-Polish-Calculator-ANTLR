@@ -1,7 +1,7 @@
 //Add the lexer and parser as import
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
-public class main {
+public class Main {
     //create a new instance of the lexer, and parser with a test string and print the parse tree
     public static void main(String[] args) throws Exception {
         ExprLexer lexer = new ExprLexer(CharStreams.fromString("3+4*5"));

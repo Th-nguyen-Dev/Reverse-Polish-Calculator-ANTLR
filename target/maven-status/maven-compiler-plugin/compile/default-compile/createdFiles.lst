@@ -1,4 +1,4 @@
-main.class
+Main.class
 ExprBaseVisitor.class
 ExprVisitor.class
 ExprParser.class
