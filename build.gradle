@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'antlr'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    antlr 'org.antlr:antlr4:4.13.1' // Use ANTLR version 4
+}
+
+generateGrammarSource {
+    arguments += ["-visitor", "-listener"]
+    outputDirectory = file("src/main/java")
+}
+
+sourceSets {
+    main {
+
+        java {
+            srcDirs = ['src']
+        }
+        antlr{
+            srcDir 'src/main/antlr'
+        }
+    }
+}
+
+
+
+
+

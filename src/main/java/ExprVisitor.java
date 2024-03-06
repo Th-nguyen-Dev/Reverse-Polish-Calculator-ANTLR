@@ -1,4 +1,4 @@
-// Generated from C:/Users/nhth2/Documents/GitHub/Reverse-Polish-Calculator-ANTLR/Expr.g4 by ANTLR 4.13.1
+// Generated from Expr.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
