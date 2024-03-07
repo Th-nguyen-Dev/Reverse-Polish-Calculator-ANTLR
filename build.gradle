@@ -3,7 +3,6 @@ plugins {
     id 'antlr'
     id 'application'
 }
-
 repositories {
     mavenCentral()
 }
@@ -14,21 +13,36 @@ dependencies {
 
 generateGrammarSource {
     arguments += ["-visitor", "-listener"]
-    outputDirectory = file("src/main/java")
+    outputDirectory = file("src/main/antlr")
 }
-
+build {
+    dependsOn generateGrammarSource
+}
 sourceSets {
     main {
 
         java {
-            srcDirs = ['src']
+            srcDirs = ['src/main/java', 'src/main/antlr']
         }
         antlr{
             srcDir 'src/main/antlr'
         }
     }
 }
-
+application {
+    // Replace 'com.example.MainClass' with the fully qualified name of your main class
+    mainClassName = 'MainClass'
+}
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'MainClass'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
 
 
 

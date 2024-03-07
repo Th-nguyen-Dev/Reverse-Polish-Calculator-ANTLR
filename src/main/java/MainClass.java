@@ -1,7 +1,6 @@
-package main.java;//Add the lexer and parser as import
+
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
-import main.java.*;
 import java.io.*;
 public class MainClass  {
     //create a new instance of the lexer, and parser with a test string and print the parse tree
