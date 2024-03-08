@@ -12,7 +12,7 @@ dependencies {
 }
 
 generateGrammarSource {
-    arguments += ["-visitor", "-listener"]
+    arguments += ["-visitor", "-no-listener"]
     outputDirectory = file("src/main/antlr")
 }
 build {
@@ -25,7 +25,7 @@ sourceSets {
             srcDirs = ['src']
         }
         antlr {
-            srcDir 'src/main/antlr'
+            srcDirs = ['src/main/antlr']
         }
     }
 }
