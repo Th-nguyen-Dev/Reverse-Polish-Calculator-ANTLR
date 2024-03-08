@@ -24,7 +24,7 @@ sourceSets {
         java {
             srcDirs = ['src']
         }
-        antlr{
+        antlr {
             srcDir 'src/main/antlr'
         }
     }

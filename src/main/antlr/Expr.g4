@@ -1,4 +1,7 @@
 grammar Expr;
+@header{
+    package main.antlr;
+}
 prog:   (expr NEWLINE)* ;
 expr:   expr ('*'|'/') expr
     |   expr ('+'|'-') expr
