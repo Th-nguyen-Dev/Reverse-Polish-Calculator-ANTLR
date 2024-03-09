@@ -1,24 +1,25 @@
 Expr_func: 2
 Expr_pw: 2
 Expr_md: 2
-Expr_func: 3
-Expr_pw: 3
-Expr_md: 3
 Expr_func: -4
 Expr_pw: -4
 Expr_md: -4
-size: 6 5
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 2.0 2.0
+
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: NEG NEG
+number: 0.0 0.0
+
 isNumber: false false
 function: MINUS MINUS
 number: 0.0 0.0
 
-isNumber: true true
-function: DEFAULT DEFAULT
-number: -4.0 -4.0
-
-isNumber: true false
-function: DEFAULT PLUS
-number: 4.0 0.0
 Expr_func: 2
 Expr_pw: 2
 Expr_md: 2
@@ -28,13 +29,13 @@
 Expr_func: 4
 Expr_pw: 4
 Expr_md: 4
-isNumber: false false
-function: MINUS MINUS
-number: 0.0 0.0
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 2.0 2.0
 
 isNumber: true true
 function: DEFAULT DEFAULT
-number: 4.0 4.0
+number: 3.0 3.0
 
 isNumber: false false
 function: PLUS PLUS
@@ -42,11 +43,11 @@
 
 isNumber: true true
 function: DEFAULT DEFAULT
-number: 3.0 3.0
+number: 4.0 4.0
 
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
+isNumber: false false
+function: MINUS MINUS
+number: 0.0 0.0
 
 Expr_func: 2
 Expr_pw: 2
@@ -54,46 +55,39 @@
 Expr_func: 3
 Expr_pw: 3
 Expr_md: 3
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 2.0 2.0
 
 isNumber: true true
 function: DEFAULT DEFAULT
 number: 3.0 3.0
 
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
+isNumber: false false
+function: PLUS PLUS
+number: 0.0 0.0
 
 Expr_func: 2
 Expr_pw: 2
 Expr_md: 2
-Expr_func: 3
-Expr_pw: 3
-Expr_md: 3
-Expr_func: 4
-Expr_pw: 4
-Expr_md: 4
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
+Expr_func: -40000000000001
+Expr_pw: -40000000000001
+Expr_md: -40000000000001
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 2.0 2.0
 
 isNumber: true true
 function: DEFAULT DEFAULT
-number: 4.0 4.0
+/number: 4.0000000000001E13 4.0000000000001E13
+
+isNumber: false false
+function: NEG NEG
+number: 0.0 0.0
 
 isNumber: false false
 function: MINUS MINUS
 number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
 
 Expr_func: 2
 Expr_pw: 2
@@ -101,15 +95,44 @@
 Expr_func: 3
 Expr_pw: 3
 Expr_md: 3
+Expr_func: 4
+Expr_pw: 4
+Expr_md: 4
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 2.0 2.0
+
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 3.0 3.0
+
 isNumber: false false
 function: MINUS MINUS
 number: 0.0 0.0
 
 isNumber: true true
 function: DEFAULT DEFAULT
-number: 3.0 3.0
+number: 4.0 4.0
 
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
+isNumber: false false
+function: PLUS PLUS
+number: 0.0 0.0
 
+Expr_func: 2
+Expr_pw: 2
+Expr_md: 2
+Expr_func: 3
+Expr_pw: 3
+Expr_md: 3
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 2.0 2.0
+
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 3.0 3.0
+
+isNumber: false false
+function: MINUS MINUS
+number: 0.0 0.0
+

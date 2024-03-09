@@ -1,21 +1,23 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.util.Stack;
 import logic.*;
 import antlr.*;
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-public class testVisitor {
+public class testVisitorAS {
 
-    boolean compareStacks(Stack<Atom> s1, Stack<Atom> s2) {
+    boolean compareStacks(Queue<Atom> s1, Queue<Atom> s2) {
         if (s1.size() != s2.size()) {
             System.out.println("size: " + s1.size() + " " + s2.size());
 
         }
         while (!s1.isEmpty()) {
-            Atom a1 = s1.pop();
-            Atom a2 = s2.pop();
+            Atom a1 = s1.poll();
+            Atom a2 = s2.poll();
             System.out.println("isNumber: " + a1.getIsNumber() + " " + a2.getIsNumber());
             System.out.println("function: " + a1.getFunction() + " " + a2.getFunction());
             System.out.println("number: " + a1.getNumber() + " " + a2.getNumber());
@@ -48,7 +50,7 @@ public class testVisitor {
         ExprParser parser = Initializer("2+3");
         ParseTree tree = parser.prog();
         ExprPostOrderVisitor eval = new ExprPostOrderVisitor();
-        Stack<Atom> result = new Stack<Atom>();
+        Queue<Atom> result = new ArrayDeque<Atom>();
         result.add(new Atom(true, 2, Atom.Function.DEFAULT));
         result.add(new Atom(true, 3, Atom.Function.DEFAULT));
         result.add(new Atom(false, 0, Atom.Function.PLUS));
@@ -59,7 +61,7 @@ public class testVisitor {
         ExprParser parser = Initializer("2-3");
         ParseTree tree = parser.prog();
         ExprPostOrderVisitor eval = new ExprPostOrderVisitor();
-        Stack<Atom> result = new Stack<Atom>();
+        Queue<Atom> result = new ArrayDeque<Atom>();
         result.add(new Atom(true, 2, Atom.Function.DEFAULT));
         result.add(new Atom(true, 3, Atom.Function.DEFAULT));
         result.add(new Atom(false, 0, Atom.Function.MINUS));
@@ -71,7 +73,7 @@ public class testVisitor {
         ExprParser parser = Initializer("2-3+4");
         ParseTree tree = parser.prog();
         ExprPostOrderVisitor eval = new ExprPostOrderVisitor();
-        Stack<Atom> result = new Stack<Atom>();
+        Queue<Atom> result = new ArrayDeque<Atom>();
         result.add(new Atom(true, 2, Atom.Function.DEFAULT));
         result.add(new Atom(true, 3, Atom.Function.DEFAULT));
         result.add(new Atom(false, 0, Atom.Function.MINUS));
@@ -85,7 +87,7 @@ public class testVisitor {
         ExprParser parser = Initializer("2+3-4");
         ParseTree tree = parser.prog();
         ExprPostOrderVisitor eval = new ExprPostOrderVisitor();
-        Stack<Atom> result = new Stack<Atom>();
+        Queue<Atom> result = new ArrayDeque<Atom>();
         result.add(new Atom(true, 2, Atom.Function.DEFAULT));
         result.add(new Atom(true, 3, Atom.Function.DEFAULT));
         result.add(new Atom(false, 0, Atom.Function.PLUS));
@@ -94,15 +96,49 @@ public class testVisitor {
         assertEquals(compareStacks(eval.visit(tree), result), true);
     }
     @Test
-    void testExprAsMinueNeg() {
-        ExprParser parser = Initializer("2+3--4");
+    void testExprAsMinusNeg() {
+        ExprParser parser = Initializer("2--4");
         ParseTree tree = parser.prog();
         ExprPostOrderVisitor eval = new ExprPostOrderVisitor();
-        Stack<Atom> result = new Stack<Atom>();
+        Queue<Atom> result = new ArrayDeque<Atom>();
         result.add(new Atom(true, 2, Atom.Function.DEFAULT));
-        result.add(new Atom(true, 3, Atom.Function.DEFAULT));
-        result.add(new Atom(false, 0, Atom.Function.PLUS));
-        result.add(new Atom(true, -4, Atom.Function.DEFAULT));
+        result.add(new Atom(true, 4, Atom.Function.DEFAULT));
+        result.add(new Atom(false, 0, Atom.Function.NEG));
+        result.add(new Atom(false, 0, Atom.Function.MINUS));
+        assertEquals(compareStacks(eval.visit(tree), result), true);
+    }
+    void testExprAsNegMinus() {
+        ExprParser parser = Initializer("--4-2");
+        ParseTree tree = parser.prog();
+        ExprPostOrderVisitor eval = new ExprPostOrderVisitor();
+        Queue<Atom> result = new ArrayDeque<Atom>();
+        result.add(new Atom(true, 4, Atom.Function.DEFAULT));
+        result.add(new Atom(false, 0, Atom.Function.NEG));
+        result.add(new Atom(true, 2, Atom.Function.DEFAULT));
+        result.add(new Atom(false, 0, Atom.Function.MINUS));
+        assertEquals(compareStacks(eval.visit(tree), result), true);
+    }
+
+    @Test
+    void testExprAsMinusNegExtream() {
+        ExprParser parser = Initializer("2--40000000000001");
+        ParseTree tree = parser.prog();
+        ExprPostOrderVisitor eval = new ExprPostOrderVisitor();
+        Queue<Atom> result = new ArrayDeque<Atom>();
+        result.add(new Atom(true, 2, Atom.Function.DEFAULT));
+        result.add(new Atom(true, 40000000000001L, Atom.Function.DEFAULT));
+        result.add(new Atom(false, 0, Atom.Function.NEG));
+        result.add(new Atom(false, 0, Atom.Function.MINUS));
+        assertEquals(compareStacks(eval.visit(tree), result), true);
+    }
+    void testExprAsNegMinusExtream() {
+        ExprParser parser = Initializer("--40000000000001-2");
+        ParseTree tree = parser.prog();
+        ExprPostOrderVisitor eval = new ExprPostOrderVisitor();
+        Queue<Atom> result = new ArrayDeque<Atom>();
+        result.add(new Atom(true, 40000000000001L, Atom.Function.DEFAULT));
+        result.add(new Atom(false, 0, Atom.Function.NEG));
+        result.add(new Atom(true, 2, Atom.Function.DEFAULT));
         result.add(new Atom(false, 0, Atom.Function.MINUS));
         assertEquals(compareStacks(eval.visit(tree), result), true);
     }
