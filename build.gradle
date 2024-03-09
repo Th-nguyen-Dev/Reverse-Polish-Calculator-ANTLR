@@ -9,6 +9,12 @@ repositories {
 
 dependencies {
     antlr 'org.antlr:antlr4:4.13.1' // Use ANTLR version 4
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+
+
 }
 
 generateGrammarSource {
@@ -22,26 +28,36 @@ sourceSets {
     main {
 
         java {
-            srcDirs = ['src']
+            srcDirs = ['src/main']
         }
         antlr {
             srcDirs = ['src/main/antlr']
         }
     }
+    test{
+        java {
+            srcDirs = ['src/test']
+        }
+
+    }
 }
 application {
     // Replace 'com.example.MainClass' with the fully qualified name of your main class
-    mainClassName = 'MainClass'
+    mainClassName = 'main.java.Main'
 }
 jar {
     manifest {
         attributes(
-                'Main-Class': 'MainClass'
+                'Main-Class': 'main.java.Main'
         )
     }
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
+}
+
+test{
+    useJUnitPlatform()
 }
 
 

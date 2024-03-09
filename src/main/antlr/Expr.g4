@@ -1,12 +1,35 @@
 grammar Expr;
 @header{
-    package main.antlr;
+    package antlr;
 }
-prog:   (expr NEWLINE)* ;
-expr:   expr ('*'|'/') expr
-    |   expr ('+'|'-') expr
-    |   INT
-    |   '(' expr ')'
+prog:   (expr_as)* ;
+expr_as: expr_as ('+') expr_md | expr_as ('-') expr_md  | expr_md ;
+expr_md: expr_md ('*') expr_pw  | expr_md ('/') expr_pw   | expr_pw  ;
+expr_pw: expr_func ('**') expr_pw | expr_func ;
+expr_func: 'sin(' expr_as ')'
+    | 'cos(' expr_as ')'
+    | 'tan(' expr_as ')'
+    | 'asin(' expr_as ')'
+    | 'acos(' expr_as ')'
+    | 'atan(' expr_as ')'
+    | 'sinh(' expr_as ')'
+    | 'cosh(' expr_as ')'
+    | 'tanh(' expr_as ')'
+    | 'log(' expr_as ')'
+    | 'ln(' expr_as ')'
+    | expr_func '!'
+    | expr_paren
     ;
+expr_paren: '(' expr_as ')'
+    | '-' expr_paren
+    | INT
+    | FLOAT
+    | SCIENTIFIC
+    | SPECIAL
+    ;
+
 NEWLINE : [\r\n]+ ;
 INT     : [0-9]+ ;
+FLOAT   : [0-9]*'.'[0-9]+ ;
+SCIENTIFIC : [0-9]+('e'|'E')[0-9]+ ;
+SPECIAL : 'π'| 'pi' | 'e' | 'phi' | 'tau' | 'inf' | 'nan' ;

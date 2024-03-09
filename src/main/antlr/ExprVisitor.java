@@ -1,6 +1,6 @@
 // Generated from Expr.g4 by ANTLR 4.13.1
 
-    package main.antlr;
+    package antlr;
 
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -19,9 +19,33 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProg(ExprParser.ProgContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ExprParser#expr}.
+	 * Visit a parse tree produced by {@link ExprParser#expr_as}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpr(ExprParser.ExprContext ctx);
+	T visitExpr_as(ExprParser.Expr_asContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExprParser#expr_md}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpr_md(ExprParser.Expr_mdContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExprParser#expr_pw}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpr_pw(ExprParser.Expr_pwContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExprParser#expr_func}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpr_func(ExprParser.Expr_funcContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExprParser#expr_paren}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpr_paren(ExprParser.Expr_parenContext ctx);
 }
