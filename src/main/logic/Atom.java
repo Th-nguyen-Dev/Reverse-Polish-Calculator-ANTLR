@@ -2,7 +2,7 @@ package logic;
 
 public class Atom {
     public enum Function{
-        DEFAULT,NEG,PLUS, MINUS, MULTIPLY, DIVIDE, POWER, SIN, COS, TAN, LOG, LN, FACTORIAL, TANH, COSH, SINH
+        DEFAULT,NEG, POS ,PLUS, MINUS, MULTIPLY, DIVIDE, POWER, SIN, COS, TAN, LOG, LN, FACTORIAL, TANH, COSH, SINH
     }
     public Atom(boolean isNumber, double number, Function function) {
         this.isNumber = isNumber;

@@ -37,6 +37,12 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpr_pw(ExprParser.Expr_pwContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link ExprParser#expr_func_mul}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpr_func_mul(ExprParser.Expr_func_mulContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link ExprParser#expr_func}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -48,4 +54,10 @@ public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitExpr_paren(ExprParser.Expr_parenContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExprParser#expr_atom}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpr_atom(ExprParser.Expr_atomContext ctx);
 }

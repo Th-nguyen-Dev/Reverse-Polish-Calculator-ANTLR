@@ -1,9 +1,4 @@
-Expr_func: 2
-Expr_pw: 2
-Expr_md: 2
-Expr_func: -4
-Expr_pw: -4
-Expr_md: -4
+2--4
 isNumber: true true
 function: DEFAULT DEFAULT
 number: 2.0 2.0
@@ -20,15 +15,7 @@
 function: MINUS MINUS
 number: 0.0 0.0
 
-Expr_func: 2
-Expr_pw: 2
-Expr_md: 2
-Expr_func: 3
-Expr_pw: 3
-Expr_md: 3
-Expr_func: 4
-Expr_pw: 4
-Expr_md: 4
+2+3-4
 isNumber: true true
 function: DEFAULT DEFAULT
 number: 2.0 2.0
@@ -49,12 +36,7 @@
 function: MINUS MINUS
 number: 0.0 0.0
 
-Expr_func: 2
-Expr_pw: 2
-Expr_md: 2
-Expr_func: 3
-Expr_pw: 3
-Expr_md: 3
+2+3
 isNumber: true true
 function: DEFAULT DEFAULT
 number: 2.0 2.0
@@ -67,12 +49,7 @@
 function: PLUS PLUS
 number: 0.0 0.0
 
-Expr_func: 2
-Expr_pw: 2
-Expr_md: 2
-Expr_func: -40000000000001
-Expr_pw: -40000000000001
-Expr_md: -40000000000001
+2--40000000000001
 isNumber: true true
 function: DEFAULT DEFAULT
 number: 2.0 2.0
@@ -89,15 +66,7 @@
 function: MINUS MINUS
 number: 0.0 0.0
 
-Expr_func: 2
-Expr_pw: 2
-Expr_md: 2
-Expr_func: 3
-Expr_pw: 3
-Expr_md: 3
-Expr_func: 4
-Expr_pw: 4
-Expr_md: 4
+2-3+4
 isNumber: true true
 function: DEFAULT DEFAULT
 number: 2.0 2.0
@@ -118,12 +87,7 @@
 function: PLUS PLUS
 number: 0.0 0.0
 
-Expr_func: 2
-Expr_pw: 2
-Expr_md: 2
-Expr_func: 3
-Expr_pw: 3
-Expr_md: 3
+2-3
 isNumber: true true
 function: DEFAULT DEFAULT
 number: 2.0 2.0
@@ -136,3 +100,358 @@
 function: MINUS MINUS
 number: 0.0 0.0
 
+	2+(3*4)/5
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 2.0 2.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 3.0 3.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 4.0 4.0
+	
+	isNumber: false false
+	function: MULTIPLY MULTIPLY
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 5.0 5.0
+	
+	isNumber: false false
+	function: DIVIDE DIVIDE
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: PLUS PLUS
+	number: 0.0 0.0
+	
+	
+2+(3*4)/5**6
+	
+isNumber: true true
+	
+function: DEFAULT DEFAULT
+	
+number: 2.0 2.0
+	
+
+	
+isNumber: true true
+	
+function: DEFAULT DEFAULT
+	
+number: 3.0 3.0
+	
+
+	
+isNumber: true true
+	
+function: DEFAULT DEFAULT
+	
+number: 4.0 4.0
+	
+
+	
+isNumber: false false
+	
+function: MULTIPLY MULTIPLY
+	
+number: 0.0 0.0
+	
+
+	
+isNumber: true true
+	
+function: DEFAULT DEFAULT
+	
+number: 5.0 5.0
+	
+
+	
+isNumber: true true
+	
+function: DEFAULT DEFAULT
+	
+number: 6.0 6.0
+	
+
+	
+isNumber: false false
+	
+function: POWER POWER
+	
+number: 0.0 0.0
+	
+
+	
+isNumber: false false
+	
+function: DIVIDE DIVIDE
+	
+number: 0.0 0.0
+	
+
+	
+isNumber: false false
+	
+function: PLUS PLUS
+	
+number: 0.0 0.0
+	
+
+	2+(3*4)/5**6+7-8*9
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 2.0 2.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 3.0 3.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 4.0 4.0
+	
+	isNumber: false false
+	function: MULTIPLY MULTIPLY
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 5.0 5.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 6.0 6.0
+	
+	isNumber: false false
+	function: POWER POWER
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: DIVIDE DIVIDE
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: PLUS PLUS
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 7.0 7.0
+	
+	isNumber: false false
+	function: PLUS PLUS
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 8.0 8.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 9.0 9.0
+	
+	isNumber: false false
+	function: MULTIPLY MULTIPLY
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: MINUS MINUS
+	number: 0.0 0.0
+	
+	2+(3*4)/5**6+7-8*9+sin(4)
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 2.0 2.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 3.0 3.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 4.0 4.0
+	
+	isNumber: false false
+	function: MULTIPLY MULTIPLY
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 5.0 5.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 6.0 6.0
+	
+	isNumber: false false
+	function: POWER POWER
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: DIVIDE DIVIDE
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: PLUS PLUS
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 7.0 7.0
+	
+	isNumber: false false
+	function: PLUS PLUS
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 8.0 8.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 9.0 9.0
+	
+	isNumber: false false
+	function: MULTIPLY MULTIPLY
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: MINUS MINUS
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 4.0 4.0
+	
+	isNumber: false false
+	function: SIN SIN
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: PLUS PLUS
+	number: 0.0 0.0
+	
+	$2+(3*4)/5**6+7-8*9+sin(4)!*cos(4)!
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 2.0 2.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 3.0 3.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 4.0 4.0
+	
+	isNumber: false false
+	function: MULTIPLY MULTIPLY
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 5.0 5.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 6.0 6.0
+	
+	isNumber: false false
+	function: POWER POWER
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: DIVIDE DIVIDE
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: PLUS PLUS
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 7.0 7.0
+	
+	isNumber: false false
+	function: PLUS PLUS
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 8.0 8.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 9.0 9.0
+	
+	isNumber: false false
+	function: MULTIPLY MULTIPLY
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: MINUS MINUS
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 4.0 4.0
+	
+	isNumber: false false
+	function: SIN SIN
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: FACTORIAL FACTORIAL
+	number: 0.0 0.0
+	
+	isNumber: true true
+	function: DEFAULT DEFAULT
+	number: 4.0 4.0
+	
+	isNumber: false false
+	function: COS COS
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: FACTORIAL FACTORIAL
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: MULTIPLY MULTIPLY
+	number: 0.0 0.0
+	
+	isNumber: false false
+	function: PLUS PLUS
+	number: 0.0 0.0
+	
+	sin(4)!
+cos(4)
+log(4)
+sin(4)
+tan(4)
+sin(cos(tan(log(4))))
+	cosh(4)
+	sinh(4)
+	tanh(4)
+sin(cos(tan(4)))
+sin(4)!cos(4)!
+4!
+sin(cos(4))
+ln(4)
+sin(4)!cos(4)
+sin(cos(tan(log(ln(4)))))
+ 2/3*4
+ !2/3
+ "2*3/4
+ #2*-40000000000001
+ $2*3
+ %2*-4
+'&	2**3**4
+'(2**3**4**5
+')2**3

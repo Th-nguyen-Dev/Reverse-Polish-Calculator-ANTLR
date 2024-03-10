@@ -37,7 +37,7 @@ public class ExprPostOrderVisitor extends AbstractParseTreeVisitor<Queue<Atom>> 
 	 */
 	@Override public Queue<Atom> visitExpr_as(ExprParser.Expr_asContext ctx) {
 		visitChildren(ctx);
-		if (ctx.getChildCount() > 1) {
+		if (ctx.getChildCount() > 1 ) {
 			if (ctx.getChild(1).getText().equals("+")) {
 				operations.add(new Atom(false, 0, Atom.Function.PLUS));
 			} else if (ctx.getChild(1).getText().equals("-")) {
@@ -82,34 +82,39 @@ public class ExprPostOrderVisitor extends AbstractParseTreeVisitor<Queue<Atom>> 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public Queue<Atom> visitExpr_func_mul(ExprParser.Expr_func_mulContext ctx) {
+		visitChildren(ctx);
+		operations.add(new Atom(false, 0, Atom.Function.MULTIPLY));
+		return null;
+	}
 	@Override public Queue<Atom> visitExpr_func(ExprParser.Expr_funcContext ctx) {
 		visitChildren(ctx);
 		if (ctx.getChildCount() > 1) {
 			String func = ctx.getChild(0).getText();
 			String factorial_func = ctx.getChild(1).getText();
 			switch (func) {
-				case "sin":
+				case "sin(":
 					operations.add(new Atom(false, 0, Atom.Function.SIN));
 					break;
-				case "cos":
+				case "cos(":
 					operations.add(new Atom(false, 0, Atom.Function.COS));
 					break;
-				case "tan":
+				case "tan(":
 					operations.add(new Atom(false, 0, Atom.Function.TAN));
 					break;
-				case "log":
+				case "log(":
 					operations.add(new Atom(false, 0, Atom.Function.LOG));
 					break;
-				case "ln":
+				case "ln(":
 					operations.add(new Atom(false, 0, Atom.Function.LN));
 					break;
-				case "tanh":
+				case "tanh(":
 					operations.add(new Atom(false, 0, Atom.Function.TANH));
 					break;
-				case "cosh":
+				case "cosh(":
 					operations.add(new Atom(false, 0, Atom.Function.COSH));
 					break;
-				case "sinh":
+				case "sinh(":
 					operations.add(new Atom(false, 0, Atom.Function.SINH));
 					break;
 			}
@@ -128,11 +133,19 @@ public class ExprPostOrderVisitor extends AbstractParseTreeVisitor<Queue<Atom>> 
 	@Override public Queue<Atom> visitExpr_paren(ExprParser.Expr_parenContext ctx) {
 		visitChildren(ctx);
 		if (ctx.getChildCount() == 2) {
-			operations.add(new Atom(false, 0, Atom.Function.NEG));
+			if (ctx.getChild((0)).getText().equals("-")){
+				operations.add(new Atom(false, 0, Atom.Function.NEG));
+			}
+			if (ctx.getChild((0)).getText().equals("+")){
+				operations.add(new Atom(false, 0, Atom.Function.POS));
+			}
 		}
-		else if (ctx.getChildCount() == 1) {
-			operations.add(new Atom(true, Double.parseDouble(ctx.getChild(0).getText()), Atom.Function.DEFAULT));
-		}
+		return null;
+	}
+
+	@Override public Queue<Atom> visitExpr_atom(ExprParser.Expr_atomContext ctx) {
+		visitChildren(ctx);
+		operations.add(new Atom(true, Double.parseDouble(ctx.getText()), Atom.Function.DEFAULT));
 		return null;
 	}
 	private Queue<Atom> operations = new ArrayDeque<Atom>();

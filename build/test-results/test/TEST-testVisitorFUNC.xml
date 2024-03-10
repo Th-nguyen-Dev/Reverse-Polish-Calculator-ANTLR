@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testVisitorFUNC" tests="16" skipped="0" failures="0" errors="0" timestamp="2024-03-10T03:06:20" hostname="RYAN" time="0.031">
+  <properties/>
+  <testcase name="testExprSinFactorial()" classname="testVisitorFUNC" time="0.001"/>
+  <testcase name="testExprCos()" classname="testVisitorFUNC" time="0.001"/>
+  <testcase name="testExprLog()" classname="testVisitorFUNC" time="0.002"/>
+  <testcase name="testExprSin()" classname="testVisitorFUNC" time="0.0"/>
+  <testcase name="testExprTan()" classname="testVisitorFUNC" time="0.001"/>
+  <testcase name="testExprSinCosTanLog()" classname="testVisitorFUNC" time="0.002"/>
+  <testcase name="testExprCosh()" classname="testVisitorFUNC" time="0.001"/>
+  <testcase name="testExprSinh()" classname="testVisitorFUNC" time="0.001"/>
+  <testcase name="testExprTanh()" classname="testVisitorFUNC" time="0.001"/>
+  <testcase name="testExprSinCosTan()" classname="testVisitorFUNC" time="0.001"/>
+  <testcase name="testExprSinFactorialCosFactorial()" classname="testVisitorFUNC" time="0.002"/>
+  <testcase name="testExprFactorial()" classname="testVisitorFUNC" time="0.002"/>
+  <testcase name="testExprSinCos()" classname="testVisitorFUNC" time="0.002"/>
+  <testcase name="testExprLn()" classname="testVisitorFUNC" time="0.001"/>
+  <testcase name="testExprSinFactorialCos()" classname="testVisitorFUNC" time="0.001"/>
+  <testcase name="testExprSinCosTanLogLn()" classname="testVisitorFUNC" time="0.002"/>
+  <system-out><![CDATA[sin(4)!
+cos(4)
+log(4)
+sin(4)
+tan(4)
+sin(cos(tan(log(4))))
+cosh(4)
+sinh(4)
+tanh(4)
+sin(cos(tan(4)))
+sin(4)!cos(4)!
+4!
+sin(cos(4))
+ln(4)
+sin(4)!cos(4)
+sin(cos(tan(log(ln(4)))))
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
