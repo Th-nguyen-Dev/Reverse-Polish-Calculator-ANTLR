@@ -41,4 +41,4 @@ NEWLINE : [\r\n]+ ;
 INT     : [0-9]+ ;
 FLOAT   : [0-9]*'.'[0-9]+ ;
 SCIENTIFIC : [0-9]+('e'|'E')[0-9]+ ;
-SPECIAL : 'π'| 'pi' | 'e' | 'phi' | 'tau' | 'inf' | 'nan' ;
+SPECIAL : 'π'| 'pi' | 'e' ;
