@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testVisitorCOMB" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-10T03:06:20" hostname="RYAN" time="0.034">
+<testsuite name="testVisitorCOMB" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-10T03:20:56" hostname="RYAN" time="0.03">
   <properties/>
   <testcase name="testExprComb1()" classname="testVisitorCOMB" time="0.006"/>
-  <testcase name="testExprComb2()" classname="testVisitorCOMB" time="0.004"/>
+  <testcase name="testExprComb2()" classname="testVisitorCOMB" time="0.003"/>
   <testcase name="testExprComb3()" classname="testVisitorCOMB" time="0.006"/>
-  <testcase name="testExprComb4()" classname="testVisitorCOMB" time="0.007"/>
-  <testcase name="testExprComb5()" classname="testVisitorCOMB" time="0.008"/>
+  <testcase name="testExprComb4()" classname="testVisitorCOMB" time="0.005"/>
+  <testcase name="testExprComb5()" classname="testVisitorCOMB" time="0.007"/>
   <system-out><![CDATA[2+(3*4)/5
 isNumber: true true
 function: DEFAULT DEFAULT

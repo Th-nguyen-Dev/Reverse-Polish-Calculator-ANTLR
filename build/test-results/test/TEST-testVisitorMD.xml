@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testVisitorMD" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-03-10T03:06:20" hostname="RYAN" time="0.008">
+<testsuite name="testVisitorMD" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-03-10T03:20:56" hostname="RYAN" time="0.006">
   <properties/>
   <testcase name="testExprAsDivideMultiply()" classname="testVisitorMD" time="0.001"/>
-  <testcase name="testExprAsDevide()" classname="testVisitorMD" time="0.001"/>
-  <testcase name="testExprAsMultiplyDivide()" classname="testVisitorMD" time="0.001"/>
+  <testcase name="testExprAsDevide()" classname="testVisitorMD" time="0.0"/>
+  <testcase name="testExprAsMultiplyDivide()" classname="testVisitorMD" time="0.0"/>
   <testcase name="testExprAsMultiplyNegExtream()" classname="testVisitorMD" time="0.0"/>
   <testcase name="testExprAsPlus()" classname="testVisitorMD" time="0.0"/>
   <testcase name="testExprAsMultiplyNeg()" classname="testVisitorMD" time="0.001"/>

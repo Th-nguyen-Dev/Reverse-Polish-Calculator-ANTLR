@@ -43,12 +43,12 @@ sourceSets {
 }
 application {
     // Replace 'com.example.MainClass' with the fully qualified name of your main class
-    mainClassName = 'main.java.Main'
+    mainClassName = 'logic.Main'
 }
 jar {
     manifest {
         attributes(
-                'Main-Class': 'main.java.Main'
+                'Main-Class': 'logic.Main'
         )
     }
     from {
