@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.013s</div>
+<div class="counter">0.026s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">testExprCos()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -89,12 +89,12 @@
 </tr>
 <tr>
 <td class="success">testExprFactorial()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testExprLn()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -104,7 +104,7 @@
 </tr>
 <tr>
 <td class="success">testExprSin()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -114,32 +114,32 @@
 </tr>
 <tr>
 <td class="success">testExprSinCosTan()</td>
-<td class="success">0.001s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testExprSinCosTanLog()</td>
-<td class="success">0.001s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testExprSinCosTanLogLn()</td>
 <td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">testExprSinCosTanLog()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testExprSinCosTanLogLn()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">testExprSinFactorial()</td>
-<td class="success">0s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testExprSinFactorialCos()</td>
-<td class="success">0s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testExprSinFactorialCosFactorial()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -149,12 +149,12 @@
 </tr>
 <tr>
 <td class="success">testExprTan()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testExprTanh()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -163,21 +163,229 @@
 <h2>Standard output</h2>
 <span class="code">
 <pre>sin(4)!
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: SIN SIN
+number: 0.0 0.0
+
+isNumber: false false
+function: FACTORIAL FACTORIAL
+number: 0.0 0.0
+
 cos(4)
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: COS COS
+number: 0.0 0.0
+
 log(4)
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: LOG LOG
+number: 0.0 0.0
+
 sin(4)
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: SIN SIN
+number: 0.0 0.0
+
 tan(4)
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: TAN TAN
+number: 0.0 0.0
+
 sin(cos(tan(log(4))))
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: LOG LOG
+number: 0.0 0.0
+
+isNumber: false false
+function: TAN TAN
+number: 0.0 0.0
+
+isNumber: false false
+function: COS COS
+number: 0.0 0.0
+
+isNumber: false false
+function: SIN SIN
+number: 0.0 0.0
+
 cosh(4)
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: COSH COSH
+number: 0.0 0.0
+
 sinh(4)
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: SINH SINH
+number: 0.0 0.0
+
 tanh(4)
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: TANH TANH
+number: 0.0 0.0
+
 sin(cos(tan(4)))
-sin(4)!cos(4)!
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: TAN TAN
+number: 0.0 0.0
+
+isNumber: false false
+function: COS COS
+number: 0.0 0.0
+
+isNumber: false false
+function: SIN SIN
+number: 0.0 0.0
+
+sin(4)!*cos(4)!
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: SIN SIN
+number: 0.0 0.0
+
+isNumber: false false
+function: FACTORIAL FACTORIAL
+number: 0.0 0.0
+
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: COS COS
+number: 0.0 0.0
+
+isNumber: false false
+function: FACTORIAL FACTORIAL
+number: 0.0 0.0
+
+isNumber: false false
+function: MULTIPLY MULTIPLY
+number: 0.0 0.0
+
 4!
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: FACTORIAL FACTORIAL
+number: 0.0 0.0
+
 sin(cos(4))
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: COS COS
+number: 0.0 0.0
+
+isNumber: false false
+function: SIN SIN
+number: 0.0 0.0
+
 ln(4)
-sin(4)!cos(4)
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: LN LN
+number: 0.0 0.0
+
+sin(4)!*cos(4)
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: SIN SIN
+number: 0.0 0.0
+
+isNumber: false false
+function: FACTORIAL FACTORIAL
+number: 0.0 0.0
+
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: COS COS
+number: 0.0 0.0
+
+isNumber: false false
+function: MULTIPLY MULTIPLY
+number: 0.0 0.0
+
 sin(cos(tan(log(ln(4)))))
+isNumber: true true
+function: DEFAULT DEFAULT
+number: 4.0 4.0
+
+isNumber: false false
+function: LN LN
+number: 0.0 0.0
+
+isNumber: false false
+function: LOG LOG
+number: 0.0 0.0
+
+isNumber: false false
+function: TAN TAN
+number: 0.0 0.0
+
+isNumber: false false
+function: COS COS
+number: 0.0 0.0
+
+isNumber: false false
+function: SIN SIN
+number: 0.0 0.0
+
 </pre>
 </span>
 </div>
@@ -189,7 +397,7 @@ sin(cos(tan(log(ln(4)))))
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at Mar 9, 2024, 7:20:56 PM</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at Mar 9, 2024, 9:47:06 PM</p>
 </div>
 </div>
 </body>

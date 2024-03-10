@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testVisitorAS" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-03-10T03:20:56" hostname="RYAN" time="0.078">
+<testsuite name="testVisitorAS" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-03-10T05:47:06" hostname="RYAN" time="0.023">
   <properties/>
-  <testcase name="testExprAsMinusNeg()" classname="testVisitorAS" time="0.062"/>
-  <testcase name="testExprAsPlusMinus()" classname="testVisitorAS" time="0.005"/>
+  <testcase name="testExprAsMinusNeg()" classname="testVisitorAS" time="0.01"/>
+  <testcase name="testExprAsPlusMinus()" classname="testVisitorAS" time="0.002"/>
   <testcase name="testExprAsPlus()" classname="testVisitorAS" time="0.001"/>
-  <testcase name="testExprAsMinusNegExtream()" classname="testVisitorAS" time="0.001"/>
+  <testcase name="testExprAsMinusNegExtream()" classname="testVisitorAS" time="0.003"/>
   <testcase name="testExprAsMinusPlus()" classname="testVisitorAS" time="0.002"/>
   <testcase name="testExprAsMinus()" classname="testVisitorAS" time="0.002"/>
   <system-out><![CDATA[2--4

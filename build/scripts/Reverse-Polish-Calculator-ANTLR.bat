@@ -72,7 +72,7 @@ set CLASSPATH=%APP_HOME%\lib\Reverse-Polish-Calculator-ANTLR.jar;%APP_HOME%\lib\
 
 
 @rem Execute Reverse-Polish-Calculator-ANTLR
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %REVERSE_POLISH_CALCULATOR_ANTLR_OPTS%  -classpath "%CLASSPATH%" main.java.Main %*
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %REVERSE_POLISH_CALCULATOR_ANTLR_OPTS%  -classpath "%CLASSPATH%" logic.Main %*
 
 :end
 @rem End local scope for the variables with windows NT shell

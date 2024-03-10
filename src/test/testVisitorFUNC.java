@@ -14,33 +14,33 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class testVisitorFUNC {
     boolean compareStacks(Queue<Atom> s1, Queue<Atom> s2) {
+        boolean isSame = true;
         if (s1.size() != s2.size()) {
-//            System.out.println("size: " + s1.size() + " " + s2.size());
-            return false;
-
+            System.out.println("size: " + s1.size() + " " + s2.size());
+            isSame = false;
         }
         while (!s1.isEmpty()) {
             Atom a1 = s1.poll();
             Atom a2 = s2.poll();
-//            System.out.println("isNumber: " + a1.getIsNumber() + " " + a2.getIsNumber());
-//            System.out.println("function: " + a1.getFunction() + " " + a2.getFunction());
-//            System.out.println("number: " + a1.getNumber() + " " + a2.getNumber());
-            if (a1.getIsNumber() != a2.getIsNumber()) {
-
-                return false;
+            if (a2 == null) {
+                a2 = new Atom(false, 0, Atom.Function.DEFAULT);
             }
-            //test for the same function
+            System.out.println("isNumber: " + a1.getIsNumber() + " " + a2.getIsNumber());
+            System.out.println("function: " + a1.getFunction() + " " + a2.getFunction());
+            System.out.println("number: " + a1.getNumber() + " " + a2.getNumber());
+            if (a1.getIsNumber() != a2.getIsNumber()) {
+                isSame = false;
+            }
             if (a1.getFunction() != a2.getFunction()) {
-
-                return false;
+                isSame = false;
             }
             if (a1.getNumber() != a2.getNumber()) {
+                isSame = false;
 
-                return false;
             }
-//            System.out.println();
+            System.out.println();
         }
-        return true;
+        return isSame;
     }
 
     ExprParser Initializer(String input) {
@@ -141,7 +141,6 @@ public class testVisitorFUNC {
         result.add(new Atom(false, 0, Atom.Function.FACTORIAL));
         assertTrue(compareStacks(test, result));
     }
-    //Write me more unit tests that test for the all other combinations of function that is defined in Atom.Function
     @Test
     void testExprSinFactorial() {
         String input = "sin(4)!";
@@ -154,7 +153,7 @@ public class testVisitorFUNC {
     }
     @Test
     void testExprSinFactorialCos() {
-        String input = "sin(4)!cos(4)";
+        String input = "sin(4)!*cos(4)";
         Queue<Atom> test = testExpr(input);
         Queue<Atom> result = new ArrayDeque<Atom>();
         result.add(new Atom(true, 4, Atom.Function.DEFAULT));
@@ -162,11 +161,12 @@ public class testVisitorFUNC {
         result.add(new Atom(false, 0, Atom.Function.FACTORIAL));
         result.add(new Atom(true, 4, Atom.Function.DEFAULT));
         result.add(new Atom(false, 0, Atom.Function.COS));
+        result.add(new Atom(false, 0, Atom.Function.MULTIPLY));
         assertTrue(compareStacks(test, result));
     }
     @Test
     void testExprSinFactorialCosFactorial() {
-        String input = "sin(4)!cos(4)!";
+        String input = "sin(4)!*cos(4)!";
         Queue<Atom> test = testExpr(input);
         Queue<Atom> result = new ArrayDeque<Atom>();
         result.add(new Atom(true, 4, Atom.Function.DEFAULT));
@@ -175,9 +175,10 @@ public class testVisitorFUNC {
         result.add(new Atom(true, 4, Atom.Function.DEFAULT));
         result.add(new Atom(false, 0, Atom.Function.COS));
         result.add(new Atom(false, 0, Atom.Function.FACTORIAL));
+        result.add(new Atom(false, 0, Atom.Function.MULTIPLY));
         assertTrue(compareStacks(test, result));
     }
-    //Write me more unit tests that test for the all other functions in form of f(g(x)) that is defined in Atom.Function
+
     @Test
     void testExprSinCos() {
         String input = "sin(cos(4))";

@@ -74,7 +74,7 @@ public class testVisitorCOMB {
         result.add(new Atom(false, 0, Atom.Function.PLUS));
         assertTrue(compareStacks(test, result));
     }
-    //Write me more unit tests that use all type of funtions in combinations with each other to create complicated expressions. Do not repeat old test
+
 
     @Test
     void testExprComb2() {

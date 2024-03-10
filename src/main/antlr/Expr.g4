@@ -2,13 +2,13 @@ grammar Expr;
 @header{
     package antlr;
 }
-prog: (expr_as)* ;
+prog: expr_as;
 expr_as: expr_as ('+') expr_md
     | expr_as ('-') expr_md
-    | expr_md ;
+    | expr_md;
 expr_md: expr_md ('*') expr_pw
     | expr_md ('/') expr_pw
-    | expr_pw  ;
+    | expr_pw;
 expr_pw: expr_func ('**') expr_pw
     | expr_func;
 expr_func_mul: expr_func
@@ -26,6 +26,7 @@ expr_func: 'sin(' expr_as ')'
     | 'ln(' expr_as ')'
     | expr_func '!'
     | expr_paren;
+
 expr_paren: '(' expr_paren ')'
     | '-' expr_paren
     | '+' expr_paren
