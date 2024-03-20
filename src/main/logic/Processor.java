@@ -18,8 +18,13 @@ public class Processor {
         ExprParser parser = new ExprParser((TokenStream) tokens);
         ParseTree tree = parser.prog();
         ExprPostOrderVisitor eval = new ExprPostOrderVisitor();
-        operations = eval.visit(tree);
+
         postfix = "";
+        operations.clear();
+        stack.clear();
+        result = 0.0;
+        operations = eval.visit(tree);
+
     }
     static int factorial(int n) {
         if (n == 0)
@@ -70,6 +75,7 @@ public class Processor {
                 break;
             case SIN:
                 stack.push(a);
+
                 stack.push(Math.sin(b));
                 postfix += "SIN" + " ";
                 break;
@@ -108,7 +114,9 @@ public class Processor {
                 stack.push(Math.log(b));
                 postfix += "LN" + " ";
                 break;
+
         }
+
 
     }
     public static void print(){
@@ -131,6 +139,7 @@ public class Processor {
         }
         result = stack.pop();
 
+
     }
 
     public static String getPostfix() {
@@ -144,7 +153,10 @@ public class Processor {
         return result;
     }
 
+    
+
     private static Double result;
+    private static String resultString;
     private static String input;
     private static String postfix = new String();
     private static Queue<Atom> operations = new ArrayDeque<Atom>();

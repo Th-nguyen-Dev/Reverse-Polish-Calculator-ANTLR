@@ -16,21 +16,20 @@ public class Main  {
             return null;
         }
     }
-    public void call_Processor(String[] args){
-        for (String arg : args) {
-            String[] lines = stringDriver(arg);
+    public static void call_Processor(String args){
+            String[] lines = stringDriver(args);
             for (String line : lines) {
+                System.out.println(line);
                 Processor processor = new Processor(line);
                 Processor.process();
                 Processor.print();
                 processor = null;
             }
-        }
     }
 
     //create a new instance of the lexer, and parser with a test string and print the parse tree
-    public void main(String[] args) throws Exception {
-        call_Processor(args);
+    public static void main(String[] args) throws Exception {
+        call_Processor(args[0]);
     }
 
 }

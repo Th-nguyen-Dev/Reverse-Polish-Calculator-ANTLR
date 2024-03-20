@@ -1,701 +1,0 @@
-temp: 2.0 
-temp: 3.0 
-Input: 2/3
-Postfix: 2.0 3.0 / 
-Result: 0.6666666666666666
-
-temp: 2.0 
-temp: 3.0 
-Input: 2*3
-Postfix: 2.0 3.0 * 
-Result: 6.0
-
-temp: 2.0 
-temp: 3.0 
-Input: 2+3
-Postfix: 2.0 3.0 + 
-Result: 5.0
-
-temp: 2.0 
-temp: 3.0 
-temp: 4.0 
-temp: 5.0 
-Input: 2+(3*4)/5
-!Postfix: 2.0 3.0 4.0 * 5.0 / + 
-Result: 4.4
-
-temp: 2.0 
-temp: 3.0 
-temp: 4.0 
-temp: 5.0 
-temp: 6.0 
-#2+(3*4)/5-6 = -1.5999999999999996
-Input: 2+(3*4)/5-6
-'Postfix: 2.0 3.0 4.0 * 5.0 / + 6.0 - 
-Result: -1.5999999999999996
-
-temp: 2.0 
-temp: 3.0 
-temp: 4.0 
-temp: 5.0 
-temp: 6.0 
-temp: 7.0 
-Input: 2+(3*4)/5-6*7
--Postfix: 2.0 3.0 4.0 * 5.0 / + 6.0 7.0 * - 
-Result: -37.6
-
-temp: 2.0 
-temp: 3.0 
-temp: 4.0 
-temp: 5.0 
-temp: 6.0 
-temp: 7.0 
-temp: 4.0 
-	temp: 2.0 
-	temp: 3.0 
-	temp: 4.0 
-	temp: 5.0 
-	temp: 6.0 
-	temp: 7.0 
-	temp: 4.0 
-	temp: 4.0 
-
-temp: 2.0 
-
-temp: 3.0 
-
-Input: 2-3
-
-Postfix: 2.0 3.0 - 
-
-Result: -1.0
-
-
-2--4
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: NEG NEG
-number: 0.0 0.0
-
-isNumber: false false
-function: MINUS MINUS
-number: 0.0 0.0
-
-2+3-4
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: MINUS MINUS
-number: 0.0 0.0
-
-2+3
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-2--40000000000001
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-/number: 4.0000000000001E13 4.0000000000001E13
-
-isNumber: false false
-function: NEG NEG
-number: 0.0 0.0
-
-isNumber: false false
-function: MINUS MINUS
-number: 0.0 0.0
-
-2-3+4
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: false false
-function: MINUS MINUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-2-3
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: false false
-function: MINUS MINUS
-number: 0.0 0.0
-
-2+(3*4)/5
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: MULTIPLY MULTIPLY
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 5.0 5.0
-
-isNumber: false false
-function: DIVIDE DIVIDE
-number: 0.0 0.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-2+(3*4)/5**6
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: MULTIPLY MULTIPLY
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 5.0 5.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 6.0 6.0
-
-isNumber: false false
-function: POWER POWER
-number: 0.0 0.0
-
-isNumber: false false
-function: DIVIDE DIVIDE
-number: 0.0 0.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-2+(3*4)/5**6+7-8*9
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: MULTIPLY MULTIPLY
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 5.0 5.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 6.0 6.0
-
-isNumber: false false
-function: POWER POWER
-number: 0.0 0.0
-
-isNumber: false false
-function: DIVIDE DIVIDE
-number: 0.0 0.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 7.0 7.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 8.0 8.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 9.0 9.0
-
-isNumber: false false
-function: MULTIPLY MULTIPLY
-number: 0.0 0.0
-
-isNumber: false false
-function: MINUS MINUS
-number: 0.0 0.0
-
-2+(3*4)/5**6+7-8*9+sin(4)
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: MULTIPLY MULTIPLY
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 5.0 5.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 6.0 6.0
-
-isNumber: false false
-function: POWER POWER
-number: 0.0 0.0
-
-isNumber: false false
-function: DIVIDE DIVIDE
-number: 0.0 0.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 7.0 7.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 8.0 8.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 9.0 9.0
-
-isNumber: false false
-function: MULTIPLY MULTIPLY
-number: 0.0 0.0
-
-isNumber: false false
-function: MINUS MINUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: SIN SIN
-number: 0.0 0.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-$2+(3*4)/5**6+7-8*9+sin(4)!*cos(4)!
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 2.0 2.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 3.0 3.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: MULTIPLY MULTIPLY
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 5.0 5.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 6.0 6.0
-
-isNumber: false false
-function: POWER POWER
-number: 0.0 0.0
-
-isNumber: false false
-function: DIVIDE DIVIDE
-number: 0.0 0.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 7.0 7.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 8.0 8.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 9.0 9.0
-
-isNumber: false false
-function: MULTIPLY MULTIPLY
-number: 0.0 0.0
-
-isNumber: false false
-function: MINUS MINUS
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: SIN SIN
-number: 0.0 0.0
-
-isNumber: false false
-function: FACTORIAL FACTORIAL
-number: 0.0 0.0
-
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: COS COS
-number: 0.0 0.0
-
-isNumber: false false
-function: FACTORIAL FACTORIAL
-number: 0.0 0.0
-
-isNumber: false false
-function: MULTIPLY MULTIPLY
-number: 0.0 0.0
-
-isNumber: false false
-function: PLUS PLUS
-number: 0.0 0.0
-
-	sin(4)!
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: SIN SIN
-number: 0.0 0.0
-
-isNumber: false false
-function: FACTORIAL FACTORIAL
-number: 0.0 0.0
-
-cos(4)
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: COS COS
-number: 0.0 0.0
-
-log(4)
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: LOG LOG
-number: 0.0 0.0
-
-sin(4)
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: SIN SIN
-number: 0.0 0.0
-
-tan(4)
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: TAN TAN
-number: 0.0 0.0
-
-sin(cos(tan(log(4))))
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: LOG LOG
-number: 0.0 0.0
-
-isNumber: false false
-function: TAN TAN
-number: 0.0 0.0
-
-isNumber: false false
-function: COS COS
-number: 0.0 0.0
-
-isNumber: false false
-function: SIN SIN
-number: 0.0 0.0
-
-	cosh(4)
-isNumber: true true
-function: DEFAULT DEFAULT
-number: 4.0 4.0
-
-isNumber: false false
-function: COSH COSH
-number: 0.0 0.0
-
- 	sinh(4)
- isNumber: true true
- function: DEFAULT DEFAULT
- number: 4.0 4.0
- 
- isNumber: false false
- function: SINH SINH
- number: 0.0 0.0
- 
-!	tanh(4)
-!isNumber: true true
-!function: DEFAULT DEFAULT
-!number: 4.0 4.0
-!
-!isNumber: false false
-!function: TANH TANH
-!number: 0.0 0.0
-!
-"sin(cos(tan(4)))
-"isNumber: true true
-"function: DEFAULT DEFAULT
-"number: 4.0 4.0
-"
-"isNumber: false false
-"function: TAN TAN
-"number: 0.0 0.0
-"
-"isNumber: false false
-"function: COS COS
-"number: 0.0 0.0
-"
-"isNumber: false false
-"function: SIN SIN
-"number: 0.0 0.0
-"
-#sin(4)!*cos(4)!
-#isNumber: true true
-#function: DEFAULT DEFAULT
-#number: 4.0 4.0
-#
-#isNumber: false false
-#function: SIN SIN
-#number: 0.0 0.0
-#
-#isNumber: false false
-#function: FACTORIAL FACTORIAL
-#number: 0.0 0.0
-#
-#isNumber: true true
-#function: DEFAULT DEFAULT
-#number: 4.0 4.0
-#
-#isNumber: false false
-#function: COS COS
-#number: 0.0 0.0
-#
-#isNumber: false false
-#function: FACTORIAL FACTORIAL
-#number: 0.0 0.0
-#
-#isNumber: false false
-#function: MULTIPLY MULTIPLY
-#number: 0.0 0.0
-#
-$4!
-$isNumber: true true
-$function: DEFAULT DEFAULT
-$number: 4.0 4.0
-$
-$isNumber: false false
-$function: FACTORIAL FACTORIAL
-$number: 0.0 0.0
-$
-%sin(cos(4))
-%isNumber: true true
-%function: DEFAULT DEFAULT
-%number: 4.0 4.0
-%
-%isNumber: false false
-%function: COS COS
-%number: 0.0 0.0
-%
-%isNumber: false false
-%function: SIN SIN
-%number: 0.0 0.0
-%
-&ln(4)
-&isNumber: true true
-&function: DEFAULT DEFAULT
-&number: 4.0 4.0
-&
-&isNumber: false false
-&function: LN LN
-&number: 0.0 0.0
-&
-'sin(4)!*cos(4)
-'isNumber: true true
-'function: DEFAULT DEFAULT
-'number: 4.0 4.0
-'
-'isNumber: false false
-'function: SIN SIN
-'number: 0.0 0.0
-'
-'isNumber: false false
-'function: FACTORIAL FACTORIAL
-'number: 0.0 0.0
-'
-'isNumber: true true
-'function: DEFAULT DEFAULT
-'number: 4.0 4.0
-'
-'isNumber: false false
-'function: COS COS
-'number: 0.0 0.0
-'
-'isNumber: false false
-'function: MULTIPLY MULTIPLY
-'number: 0.0 0.0
-'
-(sin(cos(tan(log(ln(4)))))
-(isNumber: true true
-(function: DEFAULT DEFAULT
-(number: 4.0 4.0
-(
-(isNumber: false false
-(function: LN LN
-(number: 0.0 0.0
-(
-(isNumber: false false
-(function: LOG LOG
-(number: 0.0 0.0
-(
-(isNumber: false false
-(function: TAN TAN
-(number: 0.0 0.0
-(
-(isNumber: false false
-(function: COS COS
-(number: 0.0 0.0
-(
-(isNumber: false false
-(function: SIN SIN
-(number: 0.0 0.0
-(
-*)2/3*4
-*+2/3
-*,2*3/4
-*-2*-40000000000001
-*.2*3
-*/2*-4
-10	2**3**4
-122**3**4**5
-132**3
