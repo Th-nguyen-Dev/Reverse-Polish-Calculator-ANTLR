@@ -26,91 +26,106 @@ public class Processor {
         operations = eval.visit(tree);
 
     }
-    static int factorial(int n) {
+    int factorial(int n) {
         if (n == 0)
             return 1;
         else
             return (n * factorial(n - 1));
     }
-    public static void processOperation(Atom.Function function){
-        Double b = stack.pop();
-        Double a = stack.pop();
+
+    public long factorialUsingForLoop(int n) {
+        long fact = 1;
+        for (int i = 2; i <= n; i++) {
+            fact = fact * i;
+        }
+        return fact;
+    }
+    public void processOperation(Atom.Function function){
+        Double b;
+        Double a;
         switch (function) {
             case DEFAULT:
                 return;
             case NEG:
-                stack.push(a);
+                b = stack.pop();
                 stack.push(-b);
                 postfix += "NEG" + " ";
                 break;
             case POS:
-                stack.push(a);
-                stack.push(b);
                 postfix += "POS" + " ";
                 break;
             case PLUS:
+                b = stack.pop();
+                a = stack.pop();
                 stack.push(a + b);
                 postfix += "+" + " ";
                 break;
             case MINUS:
+                b = stack.pop();
+                a = stack.pop();
                 stack.push(a - b);
                 postfix += "-" + " ";
                 break;
             case MULTIPLY:
+                b = stack.pop();
+                a = stack.pop();
                 stack.push(a* b);
                 postfix += "*" + " ";
                 break;
             case DIVIDE:
+                b = stack.pop();
+                a = stack.pop();
                 stack.push((Double) (a / b));
                 postfix += "/" + " ";
                 break;
             case POWER:
+                b = stack.pop();
+                a = stack.pop();
                 stack.push(Math.pow(a, b));
                 postfix += "**" + " ";
                 break;
             case FACTORIAL:
-                stack.push(a);
-                stack.push((double) factorial(b.intValue()));
+                b = stack.pop();
+                stack.push((double) factorialUsingForLoop(b.intValue()));
                 postfix += "!" + " ";
                 break;
             case SIN:
-                stack.push(a);
-
+                b = stack.pop();
                 stack.push(Math.sin(b));
                 postfix += "SIN" + " ";
                 break;
             case COS:
-                stack.push(a);
+                b = stack.pop();
                 stack.push(Math.cos(b));
                 postfix += "COS" + " ";
                 break;
             case TAN:
-                stack.push(a);
+                b = stack.pop();
                 stack.push(Math.tan(b));
                 postfix += "TAN" + " ";
                 break;
             case COSH:
-                stack.push(a);
+                b = stack.pop();
                 stack.push(Math.cosh(b));
                 postfix += "COSH" + " ";
                 break;
             case SINH:
-                stack.push(a);
+                b = stack.pop();
                 stack.push(Math.sinh(b));
                 postfix += "SINH" + " ";
                 break;
             case TANH:
-                stack.push(a);
+                b = stack.pop();
                 stack.push(Math.tanh(b));
                 postfix += "TANH" + " ";
                 break;
             case LOG:
-                stack.push(a);
+                b = stack.pop();
                 stack.push(Math.log10(b));
                 postfix += "LOG" + " ";
                 break;
             case LN:
-                stack.push(a);
+                b = stack.pop();
                 stack.push(Math.log(b));
                 postfix += "LN" + " ";
                 break;
@@ -119,20 +134,20 @@ public class Processor {
 
 
     }
-    public static void print(){
+    public void print(){
         System.out.println("Input: " + input);
         System.out.println("Postfix: " + postfix);
         System.out.println("Result: " + result);
         System.out.println();
     }
-    public static void process(){
+    public void process(){
 
         while (!operations.isEmpty()) {
             Atom a = operations.poll();
             if (a.getIsNumber()) {
                 stack.push(a.getNumber());
                 String temp = Double.toString(a.getNumber()) + " ";
-                postfix += temp;
+                postfix = postfix + temp;
             } else {
                 processOperation(a.getFunction());
             }
@@ -142,25 +157,25 @@ public class Processor {
 
     }
 
-    public static String getPostfix() {
+    public String getPostfix() {
         return postfix;
     }
-    public static String getInput() {
+    public  String getInput() {
         return input;
     }
 
-    public static Double getResult() {
+    public  Double getResult() {
         return result;
     }
 
     
 
-    private static Double result;
-    private static String resultString;
-    private static String input;
-    private static String postfix = new String();
-    private static Queue<Atom> operations = new ArrayDeque<Atom>();
-    private static Stack<Double> stack = new Stack<Double>();
+    private Double result;
+    private String resultString;
+    private final String input;
+    private String postfix;
+    private Queue<Atom> operations = new ArrayDeque<Atom>();
+    private Stack<Double> stack = new Stack<Double>();
 
 
 }
